@@ -24,5 +24,14 @@ namespace wpf_app
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            ButtonOutputFun();
+        }
+        private void ButtonOutputFun()
+        {
+            txtOutput.Text = $"Hello {txtName.Text} {txtSurname.Text}!";
+        }
     }
 }
