@@ -20,13 +20,13 @@ namespace wpf_app
     /// </summary>
     public partial class MainWindow : Window
     {
-        private Models.PeopleService personService = null;
+        private Models.IPeopleService peopleService = null;
 
-        public MainWindow()
+        public MainWindow(Models.IPeopleService peopleService)
         {
             InitializeComponent();
-            personService = new Models.PeopleService();
-            cmbPeople.ItemsSource = personService.People;
+            this.peopleService = peopleService;
+            cmbPeople.ItemsSource = this.peopleService.People;
             cmbPeople.DisplayMemberPath = "Surname";
         }
 

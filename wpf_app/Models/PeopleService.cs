@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace wpf_app.Models
 {
-    internal class PeopleService
+    public interface IPeopleService
+    {
+        public IList<Person> People { get; }
+
+    }
+    public class PeopleService : IPeopleService
     {
         private List<Person> _people=null;
         public PeopleService()
@@ -18,6 +23,6 @@ namespace wpf_app.Models
             _people.Add(new Person { Name = "Mario4", Surname = "Rossi4" });
 
         }
-        public IList<Person> People => _people;
+         public IList<Person> People => _people;
     }
 }
