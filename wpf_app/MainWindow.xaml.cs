@@ -20,9 +20,14 @@ namespace wpf_app
     /// </summary>
     public partial class MainWindow : Window
     {
+        private Models.PeopleService personService = null;
+
         public MainWindow()
         {
             InitializeComponent();
+            personService = new Models.PeopleService();
+            cmbPeople.ItemsSource = personService.People;
+            cmbPeople.DisplayMemberPath = "Surname";
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -31,7 +36,12 @@ namespace wpf_app
         }
         private void ButtonOutputFun()
         {
-            txtOutput.Text = $"Hello {txtName.Text} {txtSurname.Text}!";
+            if (cmbPeople.SelectedItem != null)
+            {
+                Models.Person person = (Models.Person)cmbPeople.SelectedItem;
+
+                txtOutput.Text = $"Hello {person.Name} {person.Surname}!";
+            }
         }
     }
 }

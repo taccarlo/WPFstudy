@@ -8,11 +8,9 @@
         Title="MainWindow" Height="450" Width="800">
     <Border Padding="8">
     <StackPanel>
-        <StackPanel Orientation="Horizontal" Margin="8">
-            <TextBlock Text="Nome" Margin="8,0"></TextBlock>
-            <TextBox x:Name ="txtName" Width="120"></TextBox>
-            <TextBlock Text="Cognome" Margin="8,0"></TextBlock>
-            <TextBox x:Name="txtSurname" Width="120"></TextBox>
+            <StackPanel Orientation="Horizontal" Margin="8">
+                <TextBlock Text="Cognome" Margin="8,0"></TextBlock>
+            <ComboBox x:Name="cmbPeople" Width="120"></ComboBox>
             <Button Margin="8,0" Click="Button_Click">Button example</Button>
         </StackPanel>
         <StackPanel Orientation="Horizontal">
