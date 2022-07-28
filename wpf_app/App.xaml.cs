@@ -16,7 +16,10 @@ namespace wpf_app
         protected override void OnStartup(StartupEventArgs e)
         {
             base.OnStartup(e);
-            MainWindow mainWindow = new MainWindow(new Models.PeopleService());
+            Models.PeopleService peopleService = new Models.PeopleService();
+            ViewModels.MainWindowViewModel mainWindowViewModel =
+                new ViewModels.MainWindowViewModel(peopleService);
+            MainWindow mainWindow = new(mainWindowViewModel);
             mainWindow.Show();
         }
     }

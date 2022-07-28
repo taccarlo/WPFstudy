@@ -10,11 +10,14 @@
     <StackPanel>
             <StackPanel Orientation="Horizontal" Margin="8">
                 <TextBlock Text="Cognome" Margin="8,0"></TextBlock>
-            <ComboBox x:Name="cmbPeople" Width="120"></ComboBox>
-            <Button Margin="8,0" Click="Button_Click">Button example</Button>
+                <ComboBox x:Name="cmbPeople" x:FieldModifier="private" Width="120" Margin="8,0" 
+                          ItemsSource="{Binding Path = People}" 
+                          DisplayMemberPath="Surname"
+                          SelectedItem="{Binding Path=PersonSelected}"/>
+                <Button Margin="8,0" Click="Button_Click">Button example</Button>
         </StackPanel>
         <StackPanel Orientation="Horizontal">
-                <TextBlock x:Name="txtOutput" Margin="8,0"></TextBlock>
+                <TextBlock x:Name="txtOutput" Margin="8,0" Text="{Binding Path= TextOutput}"></TextBlock>
         </StackPanel>
     </StackPanel>
     </Border>

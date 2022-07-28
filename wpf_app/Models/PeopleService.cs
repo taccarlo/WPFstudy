@@ -9,11 +9,11 @@ namespace wpf_app.Models
     public interface IPeopleService
     {
         public IList<Person> People { get; }
-
     }
+
     public class PeopleService : IPeopleService
     {
-        private List<Person> _people=null;
+        private List<Person> _people = null;
         public PeopleService()
         {
             _people = new List<Person>();
